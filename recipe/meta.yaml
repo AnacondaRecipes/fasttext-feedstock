@@ -22,6 +22,7 @@ requirements:
     - pybind11 >=2.2
     - python
     - setuptools >=0.7.0
+    - wheel
   run:
     - numpy >=1.17
     - pybind11 >=2.2
