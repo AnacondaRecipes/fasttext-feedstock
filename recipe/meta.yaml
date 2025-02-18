@@ -8,14 +8,14 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: eb03f2ef6340c6ac9e4398a30026f05471da99381b307aafe2f56e4cd26baaef
-  missing_dso_whitelist:
-    - $RPATH/ld64.so.1  # [s390x]
 
 build:
   number: 0
   # pybind11 seems incompatible on win
   skip: True  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  missing_dso_whitelist:
+    - $RPATH/ld64.so.1  # [s390x]
 
 requirements:
   build:
