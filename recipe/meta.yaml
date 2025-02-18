@@ -30,7 +30,6 @@ requirements:
     - numpy >=1.17
     - pybind11 >=2.2
     - python
-    - setuptools >=0.7.0
 
 test:
   requires:
@@ -48,6 +47,7 @@ about:
   summary: 'fastText - Library for efficient text classification and representation learning'
   dev_url: https://github.com/facebookresearch/fastText
   doc_url: https://fasttext.cc/docs/en/support.html
+  description: 'fastText - Library for efficient text classification and representation learning'
 
 extra:
   recipe-maintainers:
