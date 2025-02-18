@@ -1,13 +1,12 @@
 diff --git a/setup.py b/setup.py
-index e71ff2e..b04cf90 100644
+index e71ff2e..d775b08 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -152,7 +152,7 @@ class BuildExt(build_ext):
-             if has_flag(self.compiler, ["-fvisibility=hidden"]):
+@@ -153,6 +153,7 @@ class BuildExt(build_ext):
                  opts.append("-fvisibility=hidden")
          elif ct == "msvc":
--            opts.append('/DVERSION_INFO=\\"%s\\"' % self.distribution.get_version())
-+            opts.append('/DVERSION_INFO=\\"%s\\" /std:c++17' % self.distribution.get_version())
+             opts.append('/DVERSION_INFO=\\"%s\\"' % self.distribution.get_version())
++            opts.append('/std:c++17')
          for ext in self.extensions:
              ext.extra_compile_args = opts
              ext.extra_link_args = extra_link_args
