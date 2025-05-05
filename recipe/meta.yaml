@@ -21,7 +21,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
   host:
-    - pip
+    - pip ==25.0
     - pybind11 >=2.2
     - python
     - setuptools >=0.7.0
@@ -33,7 +33,7 @@ requirements:
 
 test:
   requires:
-    - pip
+    - pip ==25.0
   imports:
     - fasttext
   commands:
