@@ -10,12 +10,10 @@ source:
   sha256: eb03f2ef6340c6ac9e4398a30026f05471da99381b307aafe2f56e4cd26baaef
 
 build:
-  number: 0
+  number: 1
   # pybind11 seems incompatible on win
   skip: True  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  missing_dso_whitelist:
-    - $RPATH/ld64.so.1  # [s390x]
 
 requirements:
   build:
@@ -27,7 +25,7 @@ requirements:
     - setuptools >=0.7.0
     - wheel
   run:
-    - numpy >=1.17
+    - numpy >=1.17, <2
     - pybind11 >=2.2
     - python
 
